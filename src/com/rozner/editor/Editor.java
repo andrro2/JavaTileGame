@@ -1,16 +1,11 @@
 package com.rozner.editor;
 
-import com.rozner.editor.display.Display;
+import com.rozner.editor.display.EditorDisplay;
 import com.rozner.utils.FileCollector;
-import com.rozner.worlds.TestWorld;
-import com.rozner.worlds.World;
 import com.rozner.worlds.WorldManager;
-
-import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
-import java.io.File;
-import java.io.FileFilter;
+
 
 public class Editor implements Runnable{
 
@@ -18,7 +13,7 @@ public class Editor implements Runnable{
     private boolean running = false;
     private BufferStrategy bs;
     private Graphics g;
-    private Display display;
+    private EditorDisplay editorDisplay;
     public String title;
     private int width, height;
     private WorldManager worldManager;
@@ -43,19 +38,32 @@ public class Editor implements Runnable{
     private void init() {
         FileCollector collector = new FileCollector();
         collector.loadWorlds();
-        display = new Display(title, width, height);
-        display.updateMenu(worldManager.getWorlds());
+        editorDisplay = new EditorDisplay(title, width, height);
+        editorDisplay.updateMenu(worldManager.getWorlds());
         initMouseEventListeners();
     }
 
     public void tick(){
         if(worldManager.getCurrentWorld() != null){
-            display.enableSaveMenu(true);
+            editorDisplay.enableSaveMenu(true);
         }
 
     }
 
-    public void render(){
+    private void render() {
+        bs = editorDisplay.getCanvas().getBufferStrategy();
+        if (bs == null) {
+            editorDisplay.getCanvas().createBufferStrategy(3);
+            return;
+        }
+        g = bs.getDrawGraphics();
+        g.clearRect(0, 0, width, height);
+
+        if(worldManager.getCurrentWorld() != null)
+            worldManager.render(g);
+
+        bs.show();
+        g.dispose();
 
     }
 
@@ -90,7 +98,7 @@ public class Editor implements Runnable{
         if (!running)
             return;
         running = false;
-        display.getFrame().dispose();
+        editorDisplay.getFrame().dispose();
         /*try {
             thread.join();
         } catch (InterruptedException e) {
