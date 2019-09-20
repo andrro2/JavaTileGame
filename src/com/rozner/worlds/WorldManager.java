@@ -2,6 +2,7 @@ package com.rozner.worlds;
 
 import com.rozner.editor.EditorHandler;
 import com.rozner.game.Handler;
+import com.rozner.game.gfx.Assets;
 import com.rozner.game.tile.Tile;
 import com.rozner.utils.XmlEncodrerDecoder;
 
@@ -17,10 +18,12 @@ public class WorldManager {
     private TestWorld currentWorld = null;
     private Handler handler;
     private EditorHandler editorHandler;
+    private int programStatus = 1;
 
 
     private WorldManager() {
         worlds = new ArrayList<>();
+        Assets.init();
     }
 
     public static WorldManager getInstance() {
@@ -92,10 +95,10 @@ public class WorldManager {
     }
 
     public TestWorld getCurrentWorld() {
-        /*if(currentWorld == null){
+        if(currentWorld == null && worlds.size() > 0){
             currentWorld = worlds.get(0);
 
-        }*/
+        }
         return currentWorld;
     }
 
@@ -116,11 +119,17 @@ public class WorldManager {
         return tile;
     }
 
-    public int getProgramStatus() {
-        return programStatus;
+    public void setHandler(Handler handler) {
+        this.handler = handler;
     }
 
-    private int programStatus = 1;
+    public void setEditorHandler(EditorHandler editorHandler) {
+        this.editorHandler = editorHandler;
+    }
+
+    public void setProgramStatus(int programStatus) {
+        this.programStatus = programStatus;
+    }
 }
 
 

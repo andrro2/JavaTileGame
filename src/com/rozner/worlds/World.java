@@ -9,7 +9,7 @@ import java.awt.*;
 public class World {
 
 
-    private Handler handler;
+   /* private Handler handler;
     private int width, height;
     private int[][] tiles;
     private int spawnX, spawnY;
@@ -76,5 +76,5 @@ public class World {
     public int getHeight(){
         return height;
     }
-
+*/
 }

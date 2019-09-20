@@ -3,6 +3,7 @@ package com.rozner.game.entities.creatures;
 import com.rozner.game.Handler;
 import com.rozner.game.entities.Entity;
 import com.rozner.game.tile.Tile;
+import com.rozner.worlds.WorldManager;
 
 public abstract class Creature extends Entity {
 
@@ -74,7 +75,7 @@ public abstract class Creature extends Entity {
     }
 
     protected boolean collisionWithTile(int x, int y) {
-        return handler.getWorld().getTile(x, y).isSolid();
+        return WorldManager.getInstance().getTile(x, y).isSolid();
     }
 
     public int getHealth() {

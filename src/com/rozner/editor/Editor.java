@@ -1,8 +1,11 @@
 package com.rozner.editor;
 
+import com.rozner.editor.Listeners.ActionListeners;
 import com.rozner.editor.display.EditorDisplay;
 import com.rozner.utils.FileCollector;
 import com.rozner.worlds.WorldManager;
+
+import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
 
@@ -17,6 +20,7 @@ public class Editor implements Runnable{
     public String title;
     private int width, height;
     private WorldManager worldManager;
+    private ActionListeners actionListeners;
 
 
     public Editor(String title, int width, int height){
@@ -24,6 +28,7 @@ public class Editor implements Runnable{
         this.width = width;
         this.title = title;
         worldManager = WorldManager.getInstance();
+        actionListeners = new ActionListeners();
     }
 
     public synchronized void start() {
@@ -108,6 +113,10 @@ public class Editor implements Runnable{
 
 
     private void initMouseEventListeners() {
+        JMenuItem startGameButton = (JMenuItem) editorDisplay.getMb().getMenu(0).getMenuComponent(3);
+        startGameButton.addActionListener(actionListeners.startGameListener(this));
+        JMenuItem exitButton = (JMenuItem) editorDisplay.getMb().getMenu(0).getMenuComponent(4);
+        exitButton.addActionListener(actionListeners.exitButtonListener(this));
     }
 
     public Thread getThread() {

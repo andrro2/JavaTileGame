@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -22,10 +23,9 @@ public class FileCollector {
             List<String> result = walk.map(x -> x.toString())
                     .filter(f -> f.endsWith(".xml")).collect(Collectors.toList());
 
-            System.out.println(result);
             for(String path : result){
                 TestWorld world = decoder.deserializeFromXML(path);
-                System.out.println(world.getWorldName());
+                WorldManager.getInstance().setWorlds(new ArrayList<>());
                 WorldManager.getInstance().addToWorldsList(world);
             }
 

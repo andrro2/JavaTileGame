@@ -7,6 +7,9 @@ import com.rozner.game.input.KeyManager;
 import com.rozner.game.input.MouseEventListeners;
 import com.rozner.game.states.GameState;
 import com.rozner.game.states.State;
+import com.rozner.utils.FileCollector;
+import com.rozner.utils.XmlEncodrerDecoder;
+import com.rozner.worlds.WorldManager;
 
 
 import javax.swing.*;
@@ -28,7 +31,7 @@ public class Game implements Runnable {
     private MouseEventListeners mouseEventListeners;
     private GameCamera gameCamera;
     private Handler handler;
-
+    private WorldManager worldManager = WorldManager.getInstance();
     public String title;
 
 
@@ -47,11 +50,14 @@ public class Game implements Runnable {
     }
 
     private void init() {
+        worldManager.setProgramStatus(1);
+        new FileCollector().loadWorlds();
+
         display = new Display(title, width, height);
         display.getFrame().addKeyListener(keyManager);
-        Assets.init();
 
         handler = new Handler(this);
+        worldManager.setHandler(handler);
         gameCamera = new GameCamera(handler, 0, 0);
 
         gameState = new GameState(handler);
@@ -95,8 +101,10 @@ public class Game implements Runnable {
 
         while (running) {
             timer = System.currentTimeMillis();
-            tick();
-            render();
+            if (worldManager.getCurrentWorld() != null) {
+                tick();
+                render();
+            }
             try {
                 if ((System.currentTimeMillis() - timer) < time_slice) {
 

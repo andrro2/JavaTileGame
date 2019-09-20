@@ -19,7 +19,7 @@ public class EditorDisplay {
     private JMenuBar mb;
 
     private JFrame frame;
-
+    private JPanel panel;
     private Canvas canvas;
     private String title;
     private int width, height;
@@ -40,6 +40,9 @@ public class EditorDisplay {
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
+        panel = new JPanel();
+        JButton button = new JButton("azmegaz");
+        panel.add(button);
         mb = new JMenuBar();
         JMenu m1 = new JMenu("Menu");
         m1.setName("menu");
@@ -55,12 +58,9 @@ public class EditorDisplay {
 
         JMenuItem m12 = new JMenuItem("Save Map");
         m12.setEnabled(false);
-        m12.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
+        m12.addActionListener((ActionEvent e) -> {
                 WorldManager.getInstance().saveWorld();
                 updateMenu(WorldManager.getInstance().getWorlds());
-            }
         });
 
         JMenu m13 = new JMenu("Load Map");
@@ -104,6 +104,7 @@ public class EditorDisplay {
             }
         });
         frame.add(canvas);
+        frame.getContentPane().add(BorderLayout.EAST, panel);
         frame.getContentPane().add(BorderLayout.NORTH, mb);
         frame.pack();
     }
@@ -121,6 +122,7 @@ public class EditorDisplay {
     }
 
     public void updateMenu(List<TestWorld> worlds) {
+        System.out.println(worlds.toString());
         JMenu menu = mb.getMenu(0);
         Component[] components = menu.getMenuComponents();
         JMenu submenu = (JMenu) components[2];

@@ -2,12 +2,13 @@ package com.rozner.game;
 
 import com.rozner.game.gfx.GameCamera;
 import com.rozner.game.input.KeyManager;
+import com.rozner.worlds.TestWorld;
 import com.rozner.worlds.World;
 
 public class Handler {
 
     private Game game;
-    private World world;
+    private TestWorld world;
 
     public Handler(Game game){
         this.game= game;
@@ -37,11 +38,11 @@ public class Handler {
         this.game = game;
     }
 
-    public World getWorld() {
+    public TestWorld getWorld() {
         return world;
     }
 
-    public void setWorld(World world) {
+    public void setWorld(TestWorld world) {
         this.world = world;
     }
 }
