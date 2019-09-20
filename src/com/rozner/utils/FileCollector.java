@@ -18,6 +18,7 @@ public class FileCollector {
 
 
     public void loadWorlds() {
+        WorldManager.getInstance().setWorlds(new ArrayList<>());
         try (Stream<Path> walk = Files.walk(Paths.get("res/worlds"))) {
 
             List<String> result = walk.map(x -> x.toString())
@@ -25,7 +26,7 @@ public class FileCollector {
 
             for(String path : result){
                 TestWorld world = decoder.deserializeFromXML(path);
-                WorldManager.getInstance().setWorlds(new ArrayList<>());
+
                 WorldManager.getInstance().addToWorldsList(world);
             }
 

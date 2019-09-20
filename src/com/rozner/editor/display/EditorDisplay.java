@@ -122,7 +122,6 @@ public class EditorDisplay {
     }
 
     public void updateMenu(List<TestWorld> worlds) {
-        System.out.println(worlds.toString());
         JMenu menu = mb.getMenu(0);
         Component[] components = menu.getMenuComponents();
         JMenu submenu = (JMenu) components[2];
