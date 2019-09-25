@@ -14,11 +14,15 @@ public class GameState extends State {
     private TestWorld world;
     private WorldManager worldManager = WorldManager.getInstance();
 
-    public GameState(Handler handler){
+    public GameState(Handler handler) {
         super(handler);
         world = worldManager.getCurrentWorld();
         handler.setWorld(world);
-        player = new Player(handler, world.getPlayerSpawnX(),world.getPlayerSpawnY());
+        if (world == null) {
+            player = new Player(handler, 0, 0);
+        } else {
+            player = new Player(handler, world.getPlayerSpawnX(), world.getPlayerSpawnY());
+        }
     }
 
     @Override

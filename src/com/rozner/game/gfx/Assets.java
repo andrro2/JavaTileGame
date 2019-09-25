@@ -7,7 +7,7 @@ import java.awt.image.BufferedImage;
 
 public class Assets {
 
-    public static BufferedImage dirt, grass, stone;
+    public static BufferedImage grass, stone;
     public static BufferedImage[] playerStillLeft = new BufferedImage[5];
     public static BufferedImage[] playerStillRight = new BufferedImage[5];
     public static BufferedImage[] playerMoveAnimationLeft = new BufferedImage[8];
@@ -40,7 +40,6 @@ public class Assets {
         }
 
 
-        dirt = tileSheet.crop(tileWidth*5, 0, tileWidth, tileHeight);
         grass = tileSheet.crop(0,0,tileWidth, tileHeight);
         stone = tileSheet.crop(tileWidth*7, 0, tileWidth, tileHeight );
 

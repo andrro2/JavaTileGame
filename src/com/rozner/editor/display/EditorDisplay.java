@@ -45,6 +45,7 @@ public class EditorDisplay {
         panel.setMaximumSize(new Dimension(width/100*15, height));
         JButton button = new JButton("Set player spawn Location");
         button.setFocusable(false);
+
         panel.add(button);
         editorTopMenu = new EditorTopMenu(editorListener);
         mb = editorTopMenu.getMenuBar();

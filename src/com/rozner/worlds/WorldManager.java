@@ -75,6 +75,7 @@ public class WorldManager {
         XmlEncodrerDecoder decoder = new XmlEncodrerDecoder();
         String path = worldDirectory + currentWorld.getWorldName() + ".xml";
         decoder.DecodeObjectToXml(path, currentWorld);
+        editorHandler.setWorld(currentWorld);
     }
 
     public TestWorld loadWorld(String path) {

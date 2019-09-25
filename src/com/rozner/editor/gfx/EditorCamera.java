@@ -21,6 +21,9 @@ public class EditorCamera{
     }
 
     public void checkBlankSpace() {
+        if(editorHandler.getWorld() == null){
+            return;
+        }
         if (xOffset < 0) {
             xOffset = 0;
         } else if (xOffset > editorHandler.getWorld().getWidth() * Tile.TILE_WIDTH - editorHandler.getWidth()) {
