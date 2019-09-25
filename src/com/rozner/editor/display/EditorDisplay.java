@@ -42,17 +42,9 @@ public class EditorDisplay {
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
         panel = new JPanel();
-        panel.setMaximumSize(new Dimension(1000, 1000));
-        panel.setMinimumSize(new Dimension(500,500));
-        panel.setPreferredSize(new Dimension(750, 750));
-        JButton button = new JButton("azmegaz");
+        panel.setMaximumSize(new Dimension(width/100*15, height));
+        JButton button = new JButton("Set player spawn Location");
         button.setFocusable(false);
-        button.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                editorListener.toggleCanvasEventListeners();
-            }
-        });
         panel.add(button);
         editorTopMenu = new EditorTopMenu(editorListener);
         mb = editorTopMenu.getMenuBar();
@@ -65,6 +57,8 @@ public class EditorDisplay {
         //add listeners
         canvas.addMouseListener(editorListener.getCanvasEventListener());
         canvas.addMouseMotionListener(editorListener.getCanvasMotionListener());
+        canvas.addMouseListener(editorListener.getCanvasPlayerSpawnEventListener());
+        button.addActionListener(editorListener.getSpawnButtonEventListener());
 
         //pack frame
         frame.add(canvas);
