@@ -23,6 +23,8 @@ public class TestWorld {
     }
 
     public TestWorld(String worldName, int width, int height){
+        playerSpawnX = 0;
+        playerSpawnY = 0;
         this.worldName = worldName;
         this.height = height;
         this.width = width;

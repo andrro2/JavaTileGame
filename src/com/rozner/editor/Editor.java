@@ -2,6 +2,8 @@ package com.rozner.editor;
 
 import com.rozner.editor.Listeners.ActionListeners;
 import com.rozner.editor.display.EditorDisplay;
+import com.rozner.editor.gfx.EditorCamera;
+import com.rozner.editor.input.EditorKeyManager;
 import com.rozner.utils.FileCollector;
 import com.rozner.worlds.WorldManager;
 
@@ -21,6 +23,9 @@ public class Editor implements Runnable{
     private int width, height;
     private WorldManager worldManager;
     private ActionListeners actionListeners;
+    private EditorCamera editorCamera;
+    private EditorHandler editorHandler;
+    private EditorKeyManager editorKeyManager;
 
 
     public Editor(String title, int width, int height){
@@ -29,6 +34,8 @@ public class Editor implements Runnable{
         this.title = title;
         worldManager = WorldManager.getInstance();
         actionListeners = new ActionListeners();
+        editorKeyManager = new EditorKeyManager();
+
     }
 
     public synchronized void start() {
@@ -43,15 +50,23 @@ public class Editor implements Runnable{
     private void init() {
         FileCollector collector = new FileCollector();
         collector.loadWorlds();
-        editorDisplay = new EditorDisplay(title, width, height);
-        editorDisplay.updateMenu(worldManager.getWorlds());
+        worldManager.setProgramStatus(2);
+        editorHandler = new EditorHandler(this);
+        editorHandler.setWorld(worldManager.getCurrentWorld());
+        worldManager.setEditorHandler(editorHandler);
+        editorDisplay = new EditorDisplay(title, width, height, editorHandler);
+        editorDisplay.getEditorTopMenu().updateMenu(worldManager.getWorlds());
         initMouseEventListeners();
+        editorCamera = new EditorCamera(editorHandler);
+        editorDisplay.getFrame().addKeyListener(editorKeyManager);
     }
 
     public void tick(){
         if(worldManager.getCurrentWorld() != null){
             editorDisplay.enableSaveMenu(true);
         }
+        editorKeyManager.tick();
+        editorCamera.tick();
 
     }
 
@@ -121,5 +136,25 @@ public class Editor implements Runnable{
 
     public Thread getThread() {
         return thread;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public EditorCamera getEditorCamera() {
+        return editorCamera;
+    }
+
+    public EditorHandler getEditorHandler() {
+        return editorHandler;
+    }
+
+    public EditorKeyManager getEditorKeyManager() {
+        return editorKeyManager;
     }
 }

@@ -1,17 +1,19 @@
 package com.rozner.editor;
 
+import com.rozner.editor.gfx.EditorCamera;
 import com.rozner.game.Game;
 import com.rozner.game.gfx.GameCamera;
 import com.rozner.game.input.KeyManager;
+import com.rozner.worlds.TestWorld;
 import com.rozner.worlds.World;
 
 public class EditorHandler {
 
-    private Game editor;
-    private World world;
+    private Editor editor;
+    private TestWorld world;
 
-    public EditorHandler(Game game){
-        this.editor = game;
+    public EditorHandler(Editor editor){
+        this.editor = editor;
     }
 
     public int getWidth(){
@@ -22,27 +24,27 @@ public class EditorHandler {
         return editor.getHeight();
     }
 
-    public KeyManager getKeyManager(){
+    /*public KeyManager getKeyManager(){
         return editor.getKeyManager();
+    }*/
+
+    public EditorCamera getGameCamera(){
+        return editor.getEditorCamera();
     }
 
-    public GameCamera getGameCamera(){
-        return editor.getGameCamera();
-    }
-
-    public Game getEditor() {
+    public Editor getEditor() {
         return editor;
     }
 
-    public void setEditor(Game editor) {
+    public void setEditor(Editor editor) {
         this.editor = editor;
     }
 
-    public World getWorld() {
+    public TestWorld getWorld() {
         return world;
     }
 
-    public void setWorld(World world) {
+    public void setWorld(TestWorld world) {
         this.world = world;
     }
 }

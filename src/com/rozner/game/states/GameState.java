@@ -18,7 +18,7 @@ public class GameState extends State {
         super(handler);
         world = worldManager.getCurrentWorld();
         handler.setWorld(world);
-        player = new Player(handler, 500,500);
+        player = new Player(handler, world.getPlayerSpawnX(),world.getPlayerSpawnY());
     }
 
     @Override

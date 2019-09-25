@@ -3,10 +3,12 @@ package com.rozner.worlds;
 import com.rozner.editor.EditorHandler;
 import com.rozner.game.Handler;
 import com.rozner.game.gfx.Assets;
+import com.rozner.game.input.MouseEventListeners;
 import com.rozner.game.tile.Tile;
 import com.rozner.utils.XmlEncodrerDecoder;
 
 import java.awt.*;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,14 +55,14 @@ public class WorldManager {
             }
         }
         if(programStatus == 2){
-            int xStart = 0; // (int) Math.max(0, handler.getGameCamera().getxOffset() / Tile.TILE_WIDTH);
-            int xEnd = currentWorld.getWidth();//int) Math.min(currentWorld.getWidth(), (handler.getGameCamera().getxOffset() + handler.getWidth()) / Tile.TILE_WIDTH + 1);
-            int yStart = 0; //(int) Math.max(0, handler.getGameCamera().getyOffset() / Tile.TILE_HEIGHT);
-            int yEnd = currentWorld.getHeight(); //(int) Math.min(currentWorld.getHeight(), (handler.getGameCamera().getyOffset() + handler.getHeight()) / Tile.TILE_HEIGHT + 1);
+            int xStart =(int) Math.max(0, editorHandler.getGameCamera().getxOffset() / Tile.TILE_WIDTH);
+            int xEnd = (int) Math.min(currentWorld.getWidth(), (editorHandler.getGameCamera().getxOffset() + editorHandler.getWidth()) / Tile.TILE_WIDTH + 1);
+            int yStart = (int) Math.max(0, editorHandler.getGameCamera().getyOffset() / Tile.TILE_HEIGHT);
+            int yEnd = (int) Math.min(currentWorld.getHeight(), (editorHandler.getGameCamera().getyOffset() + editorHandler.getHeight()) / Tile.TILE_HEIGHT + 1);
 
             for (int y = yStart; y < yEnd; y++) {
                 for (int x = xStart; x < xEnd; x++) {
-                    getTile(x, y).render(g, (int) (x * Tile.TILE_WIDTH /*- handler.getGameCamera().getxOffset()*/), (int) (y * Tile.TILE_HEIGHT /*- handler.getGameCamera().getyOffset()*/));
+                    getTile(x, y).render(g, (int) (x * Tile.TILE_WIDTH - editorHandler.getGameCamera().getxOffset()), (int) (y * Tile.TILE_HEIGHT - editorHandler.getGameCamera().getyOffset()));
 
 
                 }
