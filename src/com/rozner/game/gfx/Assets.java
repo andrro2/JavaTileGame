@@ -1,5 +1,6 @@
 package com.rozner.game.gfx;
 
+import com.rozner.game.tile.Tile;
 import com.rozner.utils.ImageLoader;
 import com.rozner.utils.SpriteSheet;
 
@@ -7,7 +8,7 @@ import java.awt.image.BufferedImage;
 
 public class Assets {
 
-    public static BufferedImage grass, stone;
+    public static BufferedImage grass;
     public static BufferedImage[] playerStillLeft = new BufferedImage[5];
     public static BufferedImage[] playerStillRight = new BufferedImage[5];
     public static BufferedImage[] playerMoveAnimationLeft = new BufferedImage[8];
@@ -41,7 +42,13 @@ public class Assets {
 
 
         grass = tileSheet.crop(0,0,tileWidth, tileHeight);
-        stone = tileSheet.crop(tileWidth*7, 0, tileWidth, tileHeight );
+        int counter = 1;
+        System.out.println(tileSheet.getAllTextures().size());
+        for(BufferedImage subimage : tileSheet.getAllTextures()){
+            new Tile(subimage, counter);
+            counter++;
+        }
+
 
 
     }

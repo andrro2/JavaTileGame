@@ -3,6 +3,7 @@ package com.rozner.editor.display;
 import com.rozner.editor.EditWorldLayout;
 import com.rozner.editor.EditorHandler;
 import com.rozner.editor.input.EditorListener;
+import com.rozner.game.tile.Tile;
 
 import javax.swing.*;
 import java.awt.*;
@@ -42,10 +43,30 @@ public class EditorDisplay {
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
         panel = new JPanel();
-        panel.setMaximumSize(new Dimension(width/100*15, height));
+        panel.setFocusable(false);
+        panel.setPreferredSize(new Dimension(width/100*25, height));
         JButton button = new JButton("Set player spawn Location");
         button.setFocusable(false);
 
+        JPanel texturePane = new JPanel();
+        texturePane.setPreferredSize(new Dimension(width/100*20, 6700));
+        texturePane.setFocusable(false);
+        texturePane.setAutoscrolls(true);
+        for(Tile tile : Tile.tiles){
+            JLabel element = new JLabel(new ImageIcon(tile.getTexture()));
+            element.setFocusable(false);
+            element.addMouseListener(editorListener.getSelectTileMouseListener(tile));
+            texturePane.add(element);
+
+        }
+
+        JScrollPane scrollPane = new JScrollPane(texturePane);
+        scrollPane.setPreferredSize(new Dimension(width/100*25,500));
+        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        scrollPane.setFocusable(false);
+        JCheckBox isSolidCheckBox = new JCheckBox("is solid");
+        panel.add(scrollPane);
+        panel.add(isSolidCheckBox);
         panel.add(button);
         editorTopMenu = new EditorTopMenu(editorListener);
         mb = editorTopMenu.getMenuBar();
@@ -56,14 +77,14 @@ public class EditorDisplay {
         canvas.setFocusable(false);
 
         //add listeners
-        canvas.addMouseListener(editorListener.getCanvasEventListener());
-        canvas.addMouseMotionListener(editorListener.getCanvasMotionListener());
+        canvas.addMouseListener(editorListener.getCanvasEventListener(isSolidCheckBox));
+        canvas.addMouseMotionListener(editorListener.getCanvasMotionListener(isSolidCheckBox));
         canvas.addMouseListener(editorListener.getCanvasPlayerSpawnEventListener());
         button.addActionListener(editorListener.getSpawnButtonEventListener());
 
         //pack frame
-        frame.add(canvas);
-        frame.getContentPane().add(BorderLayout.EAST, panel);
+        frame.getContentPane().add(BorderLayout.CENTER, canvas);
+        frame.getContentPane().add(BorderLayout.WEST, panel);
         frame.getContentPane().add(BorderLayout.NORTH, mb);
         frame.pack();
     }

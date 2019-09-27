@@ -7,8 +7,9 @@ public class Tile {
 
     //Statics
 
-    public static Tile[] tiles = new Tile[256];
+    public static Tile[] tiles = new Tile[1065];
     public static  Tile grassTile = new GrassTile(0);
+    public static Tile currentTile;
 
 
     // Class
@@ -40,5 +41,9 @@ public class Tile {
 
     public int getId(){
         return id;
+    }
+
+    public BufferedImage getTexture() {
+        return texture;
     }
 }

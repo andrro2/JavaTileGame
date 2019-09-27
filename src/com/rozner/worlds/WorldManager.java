@@ -122,6 +122,10 @@ public class WorldManager {
         return tile;
     }
 
+    public boolean isTileSolid(int x, int y){
+        return currentWorld.getSolidTiles()[x][y];
+    }
+
     public void setHandler(Handler handler) {
         this.handler = handler;
     }

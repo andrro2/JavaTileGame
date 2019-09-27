@@ -3,7 +3,9 @@ package com.rozner.worlds;
 import com.rozner.game.gfx.Assets;
 import com.rozner.game.tile.Tile;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class TestWorld {
 
@@ -12,7 +14,7 @@ public class TestWorld {
     private String worldPath;
     private String tileTexturePAth;
     private int playerSpawnX, playerSpawnY;
-    private List<Tile> tiles;
+    private boolean[][] solidTiles;
     private int[][] worldLayout;
 
     private Tile baseTile = Tile.grassTile;
@@ -29,6 +31,7 @@ public class TestWorld {
         this.height = height;
         this.width = width;
         worldLayout = new int[height][width];
+        solidTiles = new boolean[height][width];
     }
 
 
@@ -89,14 +92,6 @@ public class TestWorld {
         this.playerSpawnY = playerSpawnY;
     }
 
-    public List<Tile> getTiles() {
-        return tiles;
-    }
-
-    public void setTiles(List<Tile> tiles) {
-        this.tiles = tiles;
-    }
-
     public int[][] getWorldLayout() {
         return worldLayout;
     }
@@ -111,5 +106,13 @@ public class TestWorld {
 
     public void setBaseTile(Tile baseTile) {
         this.baseTile = baseTile;
+    }
+
+    public boolean[][] getSolidTiles() {
+        return solidTiles;
+    }
+
+    public void setSolidTiles(boolean[][] solidTiles) {
+        this.solidTiles = solidTiles;
     }
 }

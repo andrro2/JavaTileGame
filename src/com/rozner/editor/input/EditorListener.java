@@ -2,7 +2,10 @@ package com.rozner.editor.input;
 
 import com.rozner.editor.EditWorldLayout;
 import com.rozner.editor.EditorHandler;
+import com.rozner.game.tile.Tile;
+import com.rozner.worlds.WorldManager;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
@@ -17,7 +20,7 @@ public class EditorListener {
         this.editorHandler = editorHandler;
     }
 
-    public MouseListener getCanvasEventListener() {
+    public MouseListener getCanvasEventListener(JCheckBox isSolid) {
         return new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -29,7 +32,7 @@ public class EditorListener {
                 if (canvasEventListenerToggle) {
                     float xPos = e.getX() + editorHandler.getGameCamera().getxOffset();
                     float yPos = e.getY() + editorHandler.getGameCamera().getyOffset();
-                    new EditWorldLayout().replaceTileInPosition((int) xPos, (int) yPos);
+                    new EditWorldLayout().replaceTileInPosition((int) xPos, (int) yPos, isSolid.isSelected());
                 }
             }
 
@@ -49,14 +52,14 @@ public class EditorListener {
         };
     }
 
-    public MouseMotionListener getCanvasMotionListener() {
+    public MouseMotionListener getCanvasMotionListener(JCheckBox isSolid) {
         return new MouseMotionListener() {
             @Override
             public void mouseDragged(MouseEvent e) {
                 if(canvasEventListenerToggle) {
                     float xPos = e.getX() + editorHandler.getGameCamera().getxOffset();
                     float yPos = e.getY() + editorHandler.getGameCamera().getyOffset();
-                    new EditWorldLayout().replaceTileInPosition((int) xPos, (int) yPos);
+                    new EditWorldLayout().replaceTileInPosition((int) xPos, (int) yPos, isSolid.isSelected());
                 }
             }
 
@@ -106,6 +109,35 @@ public class EditorListener {
                     canvasPlayerSpawnEventListenerToggle = false;
                     canvasEventListenerToggle = true;
                 }
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+
+            }
+        };
+    }
+
+    public MouseListener getSelectTileMouseListener(Tile tile){
+        return new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                Tile.currentTile = tile;
             }
 
             @Override
