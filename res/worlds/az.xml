@@ -1,0 +1,663 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="11.0.2" class="java.beans.XMLDecoder">
+ <object class="com.rozner.worlds.TestWorld">
+  <void property="height">
+   <int>60</int>
+  </void>
+  <void property="solidTiles">
+   <array class="[Z" length="60">
+    <void index="0">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="1">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="2">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="3">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="4">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="5">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="6">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="7">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="8">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="9">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="10">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="11">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="12">
+     <array class="boolean" length="60">
+      <void index="18">
+       <boolean>true</boolean>
+      </void>
+      <void index="19">
+       <boolean>true</boolean>
+      </void>
+     </array>
+    </void>
+    <void index="13">
+     <array class="boolean" length="60">
+      <void index="18">
+       <boolean>true</boolean>
+      </void>
+     </array>
+    </void>
+    <void index="14">
+     <array class="boolean" length="60">
+      <void index="18">
+       <boolean>true</boolean>
+      </void>
+     </array>
+    </void>
+    <void index="15">
+     <array class="boolean" length="60">
+      <void index="17">
+       <boolean>true</boolean>
+      </void>
+      <void index="18">
+       <boolean>true</boolean>
+      </void>
+     </array>
+    </void>
+    <void index="16">
+     <array class="boolean" length="60">
+      <void index="16">
+       <boolean>true</boolean>
+      </void>
+      <void index="17">
+       <boolean>true</boolean>
+      </void>
+     </array>
+    </void>
+    <void index="17">
+     <array class="boolean" length="60">
+      <void index="15">
+       <boolean>true</boolean>
+      </void>
+      <void index="16">
+       <boolean>true</boolean>
+      </void>
+     </array>
+    </void>
+    <void index="18">
+     <array class="boolean" length="60">
+      <void index="8">
+       <boolean>true</boolean>
+      </void>
+      <void index="9">
+       <boolean>true</boolean>
+      </void>
+      <void index="10">
+       <boolean>true</boolean>
+      </void>
+      <void index="11">
+       <boolean>true</boolean>
+      </void>
+      <void index="12">
+       <boolean>true</boolean>
+      </void>
+      <void index="13">
+       <boolean>true</boolean>
+      </void>
+      <void index="14">
+       <boolean>true</boolean>
+      </void>
+     </array>
+    </void>
+    <void index="19">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="20">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="21">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="22">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="23">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="24">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="25">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="26">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="27">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="28">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="29">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="30">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="31">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="32">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="33">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="34">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="35">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="36">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="37">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="38">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="39">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="40">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="41">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="42">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="43">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="44">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="45">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="46">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="47">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="48">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="49">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="50">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="51">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="52">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="53">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="54">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="55">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="56">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="57">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="58">
+     <array class="boolean" length="60"/>
+    </void>
+    <void index="59">
+     <array class="boolean" length="60"/>
+    </void>
+   </array>
+  </void>
+  <void property="width">
+   <int>60</int>
+  </void>
+  <void property="worldLayout">
+   <array class="[I" length="60">
+    <void index="0">
+     <array class="int" length="60"/>
+    </void>
+    <void index="1">
+     <array class="int" length="60"/>
+    </void>
+    <void index="2">
+     <array class="int" length="60"/>
+    </void>
+    <void index="3">
+     <array class="int" length="60">
+      <void index="5">
+       <int>4</int>
+      </void>
+      <void index="6">
+       <int>4</int>
+      </void>
+      <void index="10">
+       <int>4</int>
+      </void>
+      <void index="11">
+       <int>4</int>
+      </void>
+     </array>
+    </void>
+    <void index="4">
+     <array class="int" length="60">
+      <void index="4">
+       <int>1</int>
+      </void>
+      <void index="6">
+       <int>4</int>
+      </void>
+      <void index="7">
+       <int>4</int>
+      </void>
+      <void index="8">
+       <int>4</int>
+      </void>
+      <void index="9">
+       <int>4</int>
+      </void>
+      <void index="10">
+       <int>4</int>
+      </void>
+      <void index="11">
+       <int>4</int>
+      </void>
+     </array>
+    </void>
+    <void index="5">
+     <array class="int" length="60">
+      <void index="4">
+       <int>1</int>
+      </void>
+      <void index="5">
+       <int>1</int>
+      </void>
+      <void index="11">
+       <int>4</int>
+      </void>
+      <void index="12">
+       <int>4</int>
+      </void>
+     </array>
+    </void>
+    <void index="6">
+     <array class="int" length="60">
+      <void index="2">
+       <int>4</int>
+      </void>
+      <void index="3">
+       <int>4</int>
+      </void>
+      <void index="5">
+       <int>1</int>
+      </void>
+      <void index="6">
+       <int>1</int>
+      </void>
+      <void index="12">
+       <int>4</int>
+      </void>
+     </array>
+    </void>
+    <void index="7">
+     <array class="int" length="60">
+      <void index="4">
+       <int>4</int>
+      </void>
+      <void index="6">
+       <int>1</int>
+      </void>
+      <void index="7">
+       <int>1</int>
+      </void>
+      <void index="12">
+       <int>4</int>
+      </void>
+     </array>
+    </void>
+    <void index="8">
+     <array class="int" length="60">
+      <void index="5">
+       <int>4</int>
+      </void>
+      <void index="6">
+       <int>4</int>
+      </void>
+      <void index="8">
+       <int>1</int>
+      </void>
+      <void index="9">
+       <int>1</int>
+      </void>
+      <void index="12">
+       <int>4</int>
+      </void>
+     </array>
+    </void>
+    <void index="9">
+     <array class="int" length="60">
+      <void index="6">
+       <int>4</int>
+      </void>
+      <void index="7">
+       <int>4</int>
+      </void>
+      <void index="8">
+       <int>4</int>
+      </void>
+      <void index="12">
+       <int>4</int>
+      </void>
+     </array>
+    </void>
+    <void index="10">
+     <array class="int" length="60">
+      <void index="3">
+       <int>3</int>
+      </void>
+      <void index="8">
+       <int>4</int>
+      </void>
+      <void index="9">
+       <int>4</int>
+      </void>
+      <void index="10">
+       <int>4</int>
+      </void>
+      <void index="11">
+       <int>4</int>
+      </void>
+      <void index="12">
+       <int>4</int>
+      </void>
+     </array>
+    </void>
+    <void index="11">
+     <array class="int" length="60">
+      <void index="4">
+       <int>3</int>
+      </void>
+      <void index="5">
+       <int>3</int>
+      </void>
+      <void index="11">
+       <int>4</int>
+      </void>
+     </array>
+    </void>
+    <void index="12">
+     <array class="int" length="60">
+      <void index="5">
+       <int>3</int>
+      </void>
+      <void index="6">
+       <int>3</int>
+      </void>
+      <void index="7">
+       <int>3</int>
+      </void>
+      <void index="18">
+       <int>8</int>
+      </void>
+      <void index="19">
+       <int>8</int>
+      </void>
+     </array>
+    </void>
+    <void index="13">
+     <array class="int" length="60">
+      <void index="7">
+       <int>3</int>
+      </void>
+      <void index="8">
+       <int>3</int>
+      </void>
+      <void index="18">
+       <int>8</int>
+      </void>
+     </array>
+    </void>
+    <void index="14">
+     <array class="int" length="60">
+      <void index="8">
+       <int>3</int>
+      </void>
+      <void index="9">
+       <int>3</int>
+      </void>
+      <void index="10">
+       <int>3</int>
+      </void>
+      <void index="11">
+       <int>3</int>
+      </void>
+      <void index="12">
+       <int>3</int>
+      </void>
+      <void index="18">
+       <int>8</int>
+      </void>
+     </array>
+    </void>
+    <void index="15">
+     <array class="int" length="60">
+      <void index="17">
+       <int>8</int>
+      </void>
+      <void index="18">
+       <int>8</int>
+      </void>
+     </array>
+    </void>
+    <void index="16">
+     <array class="int" length="60">
+      <void index="16">
+       <int>8</int>
+      </void>
+      <void index="17">
+       <int>8</int>
+      </void>
+     </array>
+    </void>
+    <void index="17">
+     <array class="int" length="60">
+      <void index="15">
+       <int>8</int>
+      </void>
+      <void index="16">
+       <int>8</int>
+      </void>
+     </array>
+    </void>
+    <void index="18">
+     <array class="int" length="60">
+      <void index="8">
+       <int>8</int>
+      </void>
+      <void index="9">
+       <int>8</int>
+      </void>
+      <void index="10">
+       <int>8</int>
+      </void>
+      <void index="11">
+       <int>8</int>
+      </void>
+      <void index="12">
+       <int>8</int>
+      </void>
+      <void index="13">
+       <int>8</int>
+      </void>
+      <void index="14">
+       <int>8</int>
+      </void>
+     </array>
+    </void>
+    <void index="19">
+     <array class="int" length="60"/>
+    </void>
+    <void index="20">
+     <array class="int" length="60"/>
+    </void>
+    <void index="21">
+     <array class="int" length="60"/>
+    </void>
+    <void index="22">
+     <array class="int" length="60"/>
+    </void>
+    <void index="23">
+     <array class="int" length="60"/>
+    </void>
+    <void index="24">
+     <array class="int" length="60"/>
+    </void>
+    <void index="25">
+     <array class="int" length="60"/>
+    </void>
+    <void index="26">
+     <array class="int" length="60"/>
+    </void>
+    <void index="27">
+     <array class="int" length="60"/>
+    </void>
+    <void index="28">
+     <array class="int" length="60"/>
+    </void>
+    <void index="29">
+     <array class="int" length="60"/>
+    </void>
+    <void index="30">
+     <array class="int" length="60"/>
+    </void>
+    <void index="31">
+     <array class="int" length="60"/>
+    </void>
+    <void index="32">
+     <array class="int" length="60"/>
+    </void>
+    <void index="33">
+     <array class="int" length="60"/>
+    </void>
+    <void index="34">
+     <array class="int" length="60"/>
+    </void>
+    <void index="35">
+     <array class="int" length="60"/>
+    </void>
+    <void index="36">
+     <array class="int" length="60"/>
+    </void>
+    <void index="37">
+     <array class="int" length="60"/>
+    </void>
+    <void index="38">
+     <array class="int" length="60"/>
+    </void>
+    <void index="39">
+     <array class="int" length="60"/>
+    </void>
+    <void index="40">
+     <array class="int" length="60"/>
+    </void>
+    <void index="41">
+     <array class="int" length="60"/>
+    </void>
+    <void index="42">
+     <array class="int" length="60"/>
+    </void>
+    <void index="43">
+     <array class="int" length="60"/>
+    </void>
+    <void index="44">
+     <array class="int" length="60"/>
+    </void>
+    <void index="45">
+     <array class="int" length="60"/>
+    </void>
+    <void index="46">
+     <array class="int" length="60"/>
+    </void>
+    <void index="47">
+     <array class="int" length="60"/>
+    </void>
+    <void index="48">
+     <array class="int" length="60"/>
+    </void>
+    <void index="49">
+     <array class="int" length="60"/>
+    </void>
+    <void index="50">
+     <array class="int" length="60"/>
+    </void>
+    <void index="51">
+     <array class="int" length="60"/>
+    </void>
+    <void index="52">
+     <array class="int" length="60"/>
+    </void>
+    <void index="53">
+     <array class="int" length="60"/>
+    </void>
+    <void index="54">
+     <array class="int" length="60"/>
+    </void>
+    <void index="55">
+     <array class="int" length="60"/>
+    </void>
+    <void index="56">
+     <array class="int" length="60"/>
+    </void>
+    <void index="57">
+     <array class="int" length="60"/>
+    </void>
+    <void index="58">
+     <array class="int" length="60"/>
+    </void>
+    <void index="59">
+     <array class="int" length="60"/>
+    </void>
+   </array>
+  </void>
+  <void property="worldName">
+   <string>az</string>
+  </void>
+ </object>
+</java>
